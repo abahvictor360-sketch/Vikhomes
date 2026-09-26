@@ -45,14 +45,20 @@ function fillSearchOptions(form, params = new URLSearchParams()) {
   }
 }
 
-// Mobile nav
+// Mobile nav (full-screen menu on tablets and phones)
 const nav = document.querySelector(".nav");
 const toggle = document.querySelector(".nav-toggle");
+function setMenu(open) {
+  nav.classList.toggle("open", open);
+  document.body.classList.toggle("menu-open", open);
+  toggle.setAttribute("aria-expanded", open);
+  toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+}
 if (nav && toggle) {
-  toggle.addEventListener("click", () => {
-    const open = nav.classList.toggle("open");
-    toggle.setAttribute("aria-expanded", open);
-  });
+  toggle.addEventListener("click", () => setMenu(!nav.classList.contains("open")));
+  nav.querySelectorAll(".nav-links a").forEach((a) => a.addEventListener("click", () => setMenu(false)));
+  document.addEventListener("keydown", (e) => e.key === "Escape" && setMenu(false));
+  window.matchMedia("(min-width: 901px)").addEventListener("change", (e) => e.matches && setMenu(false));
 }
 
 // Forms without a backend: show a confirmation message instead of submitting.

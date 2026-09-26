@@ -66,4 +66,20 @@ if (!home) {
   updateCalc();
 
   $("property").hidden = false;
+
+  // Sticky "Book a viewing" bar (tablets & phones): shown once the hero is
+  // scrolled past, hidden while the booking form itself is on screen.
+  const bar = $("book-bar");
+  $("bar-name").textContent = home.name;
+  $("bar-price").textContent = formatPrice(home.price);
+  document.body.classList.add("has-book-bar");
+  let pastHero = false;
+  let formVisible = false;
+  const updateBar = () => {
+    const show = pastHero && !formVisible;
+    bar.classList.toggle("show", show);
+    bar.setAttribute("aria-hidden", !show);
+  };
+  new IntersectionObserver(([e]) => { pastHero = !e.isIntersecting; updateBar(); }).observe($("hero"));
+  new IntersectionObserver(([e]) => { formVisible = e.isIntersecting; updateBar(); }, { threshold: 0.2 }).observe($("book"));
 }

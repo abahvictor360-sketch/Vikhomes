@@ -8,7 +8,9 @@ let page = 0;
 let pages = 0;
 
 function perPage() {
-  return window.matchMedia("(max-width: 820px)").matches ? 1 : PER_PAGE_DESKTOP;
+  if (window.matchMedia("(max-width: 640px)").matches) return 1;
+  if (window.matchMedia("(max-width: 1100px)").matches) return 2;
+  return PER_PAGE_DESKTOP;
 }
 
 function render() {
