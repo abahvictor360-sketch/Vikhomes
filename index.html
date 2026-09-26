@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vik Homes — Finding Your New Home Is Simple</title>
+  <meta name="description" content="Vik Homes is your go-to destination for finding the perfect home to suit your needs.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page">
+    <!-- Hero -->
+    <header class="hero" id="home">
+      <nav class="nav">
+        <a href="#home" class="logo" aria-label="Vik Homes home">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 10.5 12 3l9 7.5V21h-6v-6H9v6H3z"/>
+          </svg>
+          <span>Vik Homes</span>
+        </a>
+
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+
+        <ul class="nav-links">
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#contacts">Contacts</a></li>
+          <li><a href="#support">Support</a></li>
+          <li><a href="#location">Location</a></li>
+          <li><a href="#about">About us</a></li>
+        </ul>
+
+        <a href="#search" class="btn-ghost">Try now</a>
+      </nav>
+
+      <div class="hero-content">
+        <h1>Finding Your New<br>Home Is Simple</h1>
+        <p>
+          VikHomes.com is your go to destination for finding the perfect home to suit your needs.
+          With thousands of property listings across the country and beyond.
+        </p>
+        <form class="hero-search" onsubmit="event.preventDefault(); document.getElementById('most-viewed').scrollIntoView({behavior:'smooth'});">
+          <input type="text" placeholder="Search" aria-label="Search homes">
+          <button type="submit" aria-label="Search">
+            <svg viewBox="0 0 40 12" width="40" height="12" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+              <path d="M0 6h38M33 1l5 5-5 5"/>
+            </svg>
+          </button>
+        </form>
+      </div>
+    </header>
+
+    <!-- Search bar -->
+    <form class="search-bar" id="search">
+      <label class="field">
+        <span class="field-label">City Street <svg viewBox="0 0 10 6" width="10" height="6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></span>
+        <select name="city">
+          <option>123Street</option>
+          <option>Ocean Drive</option>
+          <option>Maple Lane</option>
+          <option>Oak Avenue</option>
+        </select>
+      </label>
+      <label class="field">
+        <span class="field-label">Tipology of rent <svg viewBox="0 0 10 6" width="10" height="6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></span>
+        <select name="type">
+          <option>Villa</option>
+          <option>House</option>
+          <option>Cottage</option>
+          <option>Apartment</option>
+        </select>
+      </label>
+      <label class="field">
+        <span class="field-label">Price <svg viewBox="0 0 10 6" width="10" height="6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></span>
+        <select name="price">
+          <option>€ 950.000,00</option>
+          <option>€ 750.000,00</option>
+          <option>€ 540.000,00</option>
+          <option>€ 350.000,00</option>
+        </select>
+      </label>
+      <button type="submit" class="btn-primary">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>
+        </svg>
+        Search
+      </button>
+    </form>
+
+    <!-- Most viewed -->
+    <section class="most-viewed" id="most-viewed">
+      <span class="eyebrow-line" aria-hidden="true"></span>
+      <h2>Most Viewed</h2>
+      <p class="section-sub">
+        Discover a range of vacation homes worldwide. Book securely and get
+        expert customer support for a stress-free stay.
+      </p>
+
+      <div class="carousel">
+        <div class="track" id="track"></div>
+      </div>
+      <div class="dots" id="dots" role="tablist" aria-label="Listings pages"></div>
+    </section>
+
+    <!-- Easiest method -->
+    <section class="method" id="about">
+      <div class="method-media">
+        <img src="images/about.jpg" alt="Modern two-storey home with a glass balcony and palm-lined garden">
+        <span class="method-badge" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round">
+            <path d="M3 10.5 12 3l9 7.5V21h-6v-6H9v6H3z"/>
+          </svg>
+        </span>
+      </div>
+      <div class="method-text">
+        <h2>The Easiest Method<br>To Find a House</h2>
+        <p>
+          Tell us where you want to live, what kind of home you need and your budget.
+          We match you with verified listings, arrange viewings and guide you through
+          every step until you get the keys.
+        </p>
+        <ul class="steps">
+          <li><span>01</span><div><strong>Search</strong>Filter by location, type and price.</div></li>
+          <li><span>02</span><div><strong>Visit</strong>Book a viewing in a couple of clicks.</div></li>
+          <li><span>03</span><div><strong>Move in</strong>Sign securely and settle into your new home.</div></li>
+        </ul>
+        <a href="#search" class="btn-primary">Get started</a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contacts">
+      <div class="footer-brand">
+        <a href="#home" class="logo">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 10.5 12 3l9 7.5V21h-6v-6H9v6H3z"/>
+          </svg>
+          <span>Vik Homes</span>
+        </a>
+        <p>Your go to destination for finding the perfect home.</p>
+      </div>
+      <div id="support">
+        <h4>Support</h4>
+        <a href="#">Help centre</a>
+        <a href="#">Safety</a>
+        <a href="#">Terms</a>
+      </div>
+      <div id="location">
+        <h4>Location</h4>
+        <a href="#">United States</a>
+        <a href="#">Europe</a>
+        <a href="#">Africa</a>
+      </div>
+      <div>
+        <h4>Contacts</h4>
+        <a href="mailto:hello@vikhomes.com">hello@vikhomes.com</a>
+        <a href="tel:+10000000000">+1 000 000 0000</a>
+      </div>
+      <p class="copyright">© <span id="year"></span> Vik Homes. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
