@@ -1,0 +1,90 @@
+// Placeholder listings — replace with real properties.
+const LISTINGS = [
+  {
+    id: "ocean-breeze-villa",
+    name: "Ocean Breeze Villa",
+    street: "123 Main Street",
+    city: "San Diego",
+    state: "CA 92101",
+    type: "Villa",
+    beds: 4, baths: 2, area: 320, year: 2022, parking: 2,
+    price: 910000,
+    image: "images/house-1.jpg",
+    description:
+      "A crisp two-storey villa behind a private gated courtyard. Floor-to-ceiling glazing fills the living spaces with light, and the upper terrace with its glass balustrade is made for warm evenings.",
+    features: ["Gated driveway", "Glass balcony", "Smart lighting", "Landscaped garden", "Open-plan kitchen", "Air conditioning"],
+  },
+  {
+    id: "jakson-house",
+    name: "Jakson House",
+    street: "456 Oak Avenue",
+    city: "New York",
+    state: "NY 10001",
+    type: "House",
+    beds: 1, baths: 2, area: 180, year: 2021, parking: 1,
+    price: 750000,
+    image: "images/house-2.jpg",
+    description:
+      "Stone, timber and steel come together in this compact modern home. A covered pergola carport, black-framed windows and a quiet front garden give it real street presence.",
+    features: ["Timber pergola carport", "Stone feature wall", "Private gate", "Balcony", "Home office", "Storage room"],
+  },
+  {
+    id: "lakeside-cottage",
+    name: "Lakeside Cottage",
+    street: "789 Maple Lane",
+    city: "Los Angeles",
+    state: "CA 90001",
+    type: "Cottage",
+    beds: 3, baths: 1, area: 210, year: 2020, parking: 2,
+    price: 540000,
+    image: "images/house-3.jpg",
+    description:
+      "Bold cantilevered volumes and warm interior lighting define this contemporary cottage. The wide terrace opens onto a manicured front garden and a polished forecourt.",
+    features: ["Cantilevered terrace", "Recessed lighting", "Hedged garden", "Double-height lounge", "Guest suite", "Security system"],
+  },
+  {
+    id: "sunset-ridge-manor",
+    name: "Sunset Ridge Manor",
+    street: "21 Ridge Road",
+    city: "Austin",
+    state: "TX 73301",
+    type: "House",
+    beds: 5, baths: 3, area: 410, year: 2023, parking: 2,
+    price: 1250000,
+    image: "images/house-6.jpg",
+    description:
+      "A wide contemporary home with a covered two-car carport, a stone-clad chimney and a planted, glass-fronted balcony running the length of the upper floor. Timber accents and tropical landscaping soften the clean lines.",
+    features: ["Covered carport", "Planted glass balcony", "Stone chimney", "Tropical garden", "Timber front door", "Open-plan living"],
+  },
+  {
+    id: "palm-court-residence",
+    name: "Palm Court Residence",
+    street: "88 Palm Court",
+    city: "Miami",
+    state: "FL 33101",
+    type: "Villa",
+    beds: 4, baths: 3, area: 350, year: 2024, parking: 2,
+    price: 980000,
+    image: "images/house-4.jpg",
+    description:
+      "Clean white render, timber screens and a rooftop terrace. This villa sits behind a pale stone wall with a slatted steel gate, with tropical planting framing the entrance court.",
+    features: ["Rooftop terrace", "Timber screens", "Sliding steel gate", "Tropical garden", "Wall-wash lighting", "Laundry room"],
+  },
+  {
+    id: "cedar-grove-home",
+    name: "Cedar Grove Home",
+    street: "14 Cedar Grove",
+    city: "Seattle",
+    state: "WA 98101",
+    type: "House",
+    beds: 4, baths: 2, area: 290, year: 2019, parking: 2,
+    price: 865000,
+    image: "images/house-5.jpg",
+    description:
+      "A calm, symmetrical family home with a hipped roof, framed entrance portico and a sweeping paved driveway. Large windows and soft exterior lighting make it glow at dusk.",
+    features: ["Attached garage", "Paved driveway", "Front lawn", "Entrance portico", "Family room", "Pantry"],
+  },
+];
+
+const CITIES = [...new Set(LISTINGS.map((l) => l.city))];
+const TYPES = ["Villa", "House", "Cottage"];

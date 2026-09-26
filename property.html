@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Property — Vik Homes</title>
+  <meta name="description" content="Property details on Vik Homes.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page">
+    <header class="page-hero" id="hero" style="--hero: url('images/hero.jpg')">
+      <nav class="nav">
+        <a href="index.html" class="logo" aria-label="Vik Homes home">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 10.5 12 3l9 7.5V21h-6v-6H9v6H3z"/>
+          </svg>
+          <span>Vik Homes</span>
+        </a>
+
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="contacts.html">Contacts</a></li>
+          <li><a href="support.html">Support</a></li>
+          <li><a href="location.html">Location</a></li>
+          <li><a href="about.html">About us</a></li>
+        </ul>
+
+        <a href="listings.html" class="btn-ghost">Try now</a>
+      </nav>
+      <div class="page-hero-content">
+        <p class="crumbs"><a href="index.html">Home</a> / <a href="listings.html">Listings</a> / <span id="crumb-name">Property</span></p>
+        <h1 id="p-name">Property</h1>
+        <p id="p-address"></p>
+      </div>
+    </header>
+
+    <main class="section" id="property" hidden>
+      <div class="property">
+        <div class="property-main">
+          <img class="property-photo" id="p-photo" src="" alt="">
+
+          <ul class="facts">
+            <li><span id="p-beds"></span>Bedrooms</li>
+            <li><span id="p-baths"></span>Bathrooms</li>
+            <li><span id="p-area"></span>Living area</li>
+            <li><span id="p-year"></span>Built</li>
+            <li><span id="p-parking"></span>Parking</li>
+          </ul>
+
+          <h2 class="sub-heading">About this home</h2>
+          <p class="lead" id="p-description"></p>
+
+          <h2 class="sub-heading">Features</h2>
+          <ul class="features" id="p-features"></ul>
+        </div>
+
+        <aside class="property-side">
+          <div class="panel">
+            <p class="panel-label" id="p-type"></p>
+            <p class="panel-price" id="p-price"></p>
+            <form class="form" data-demo>
+              <h3>Book a viewing</h3>
+              <label>Full name<input type="text" name="name" required autocomplete="name"></label>
+              <label>Email<input type="email" name="email" required autocomplete="email"></label>
+              <label>Phone<input type="tel" name="phone" autocomplete="tel"></label>
+              <label>Preferred date<input type="date" name="date"></label>
+              <label>Message<textarea name="message" rows="3" id="p-message" data-keep></textarea></label>
+              <button type="submit" class="btn-primary">Request viewing</button>
+              <p class="form-success" hidden>Thanks! An agent will contact you shortly to confirm your viewing.</p>
+            </form>
+          </div>
+        </aside>
+      </div>
+
+      <section class="similar">
+        <h2>Similar Homes</h2>
+        <div class="grid" id="similar"></div>
+      </section>
+    </main>
+
+    <main class="section empty" id="not-found" hidden>
+      <h3>We couldn’t find that home</h3>
+      <p>It may have been sold or removed.</p>
+      <a href="listings.html" class="btn-primary">Browse all homes</a>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 10.5 12 3l9 7.5V21h-6v-6H9v6H3z"/>
+          </svg>
+          <span>Vik Homes</span>
+        </a>
+        <p>Your go to destination for finding the perfect home.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="listings.html">All homes</a>
+        <a href="location.html">Locations</a>
+        <a href="about.html">About us</a>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <a href="support.html">Help centre</a>
+        <a href="support.html">FAQs</a>
+        <a href="contacts.html">Contact us</a>
+      </div>
+      <div>
+        <h4>Contacts</h4>
+        <a href="mailto:hello@vikhomes.com">hello@vikhomes.com</a>
+        <a href="tel:+10000000000">+1 000 000 0000</a>
+      </div>
+      <p class="copyright">© <span id="year"></span> Vik Homes. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="common.js"></script>
+  <script src="property.js"></script>
+</body>
+</html>

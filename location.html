@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Locations — Vik Homes</title>
+  <meta name="description" content="Explore the cities where Vik Homes has homes available.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page">
+    <header class="page-hero" style="--hero: url('images/house-5.jpg')">
+      <nav class="nav">
+        <a href="index.html" class="logo" aria-label="Vik Homes home">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 10.5 12 3l9 7.5V21h-6v-6H9v6H3z"/>
+          </svg>
+          <span>Vik Homes</span>
+        </a>
+
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="contacts.html">Contacts</a></li>
+          <li><a href="support.html">Support</a></li>
+          <li><a href="location.html" class="active" aria-current="page">Location</a></li>
+          <li><a href="about.html">About us</a></li>
+        </ul>
+
+        <a href="listings.html" class="btn-ghost">Try now</a>
+      </nav>
+      <div class="page-hero-content">
+        <p class="crumbs"><a href="index.html">Home</a> / Location</p>
+        <h1>Explore Homes By City</h1>
+        <p>Pick a city to see every home we have available there.</p>
+      </div>
+    </header>
+
+    <main class="section centered">
+      <span class="eyebrow-line" aria-hidden="true"></span>
+      <h2>Where We Are</h2>
+      <p class="section-sub">From coastal villas to city houses, discover homes in the places people love to live.</p>
+
+      <div class="cities" id="cities"></div>
+
+      <section class="cta">
+        <div>
+          <h2>Don’t see your city?</h2>
+          <p>Tell us where you’re looking and we’ll let you know when homes become available.</p>
+        </div>
+        <a href="contacts.html" class="btn-light">Get in touch</a>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 10.5 12 3l9 7.5V21h-6v-6H9v6H3z"/>
+          </svg>
+          <span>Vik Homes</span>
+        </a>
+        <p>Your go to destination for finding the perfect home.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="listings.html">All homes</a>
+        <a href="location.html">Locations</a>
+        <a href="about.html">About us</a>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <a href="support.html">Help centre</a>
+        <a href="support.html">FAQs</a>
+        <a href="contacts.html">Contact us</a>
+      </div>
+      <div>
+        <h4>Contacts</h4>
+        <a href="mailto:hello@vikhomes.com">hello@vikhomes.com</a>
+        <a href="tel:+10000000000">+1 000 000 0000</a>
+      </div>
+      <p class="copyright">© <span id="year"></span> Vik Homes. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="common.js"></script>
+  <script>
+    document.getElementById("cities").innerHTML = CITIES.map((city) => {
+      const homes = LISTINGS.filter((l) => l.city === city);
+      const from = Math.min(...homes.map((l) => l.price));
+      return `
+        <a class="city" href="listings.html?city=${encodeURIComponent(city)}">
+          <img src="${homes[0].image}" alt="" loading="lazy">
+          <div class="city-body">
+            <h3>${escapeHTML(city)}</h3>
+            <p>${homes.length} ${homes.length === 1 ? "home" : "homes"} · from ${formatPrice(from)}</p>
+          </div>
+          <span class="city-arrow" aria-hidden="true">→</span>
+        </a>`;
+    }).join("");
+  </script>
+</body>
+</html>
