@@ -84,6 +84,34 @@ const LISTINGS = [
       "A calm, symmetrical family home with a hipped roof, framed entrance portico and a sweeping paved driveway. Large windows and soft exterior lighting make it glow at dusk.",
     features: ["Attached garage", "Paved driveway", "Front lawn", "Entrance portico", "Family room", "Pantry"],
   },
+  {
+    id: "willow-creek-estate",
+    name: "Willow Creek Estate",
+    street: "5 Willow Creek Drive",
+    city: "Austin",
+    state: "TX 73344",
+    type: "House",
+    beds: 5, baths: 4, area: 460, year: 2024, parking: 2,
+    price: 1390000,
+    image: "images/hero.jpg",
+    description:
+      "A striking family home with a limestone chimney, a double-height glass entrance with chandelier and a wraparound upper balcony. Stepping-stone paths lead through a lit, fully landscaped front garden to a wide paved driveway.",
+    features: ["Double garage", "Chandelier foyer", "Upper-floor balcony", "Stone chimney", "Garden lighting", "Walk-in wardrobes"],
+  },
+  {
+    id: "meadowview-modern",
+    name: "Meadowview Modern",
+    street: "300 Meadow Way",
+    city: "San Diego",
+    state: "CA 92103",
+    type: "Villa",
+    beds: 4, baths: 3, area: 380, year: 2023, parking: 2,
+    price: 1150000,
+    image: "images/about.jpg",
+    description:
+      "Crisp white volumes, warm timber cladding and walls of glass open this villa onto a broad, sunlit lawn. The upper terrace wraps the corner of the house with a frameless glass balustrade.",
+    features: ["Floor-to-ceiling glazing", "Wraparound terrace", "Timber cladding", "Large lawn", "Open-plan living", "Outdoor lounge"],
+  },
 ];
 
 const CITIES = [...new Set(LISTINGS.map((l) => l.city))];

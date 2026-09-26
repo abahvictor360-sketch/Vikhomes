@@ -67,3 +67,7 @@ sortSelect.addEventListener("change", () => {
   form.sort.value = sortSelect.value;
   form.submit();
 });
+
+document.getElementById("city-chips").innerHTML = CITIES
+  .map((c) => `<a href="listings.html?city=${encodeURIComponent(c)}">${escapeHTML(c)}</a>`)
+  .join("");

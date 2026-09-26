@@ -68,5 +68,52 @@ document.querySelectorAll("form[data-demo]").forEach((form) => {
   });
 });
 
+
+// Photo tiles linking to filtered listings (used for cities and home types).
+function tileHTML(title, homes, href, image = homes[0].image) {
+  const from = Math.min(...homes.map((l) => l.price));
+  return `
+    <a class="city" href="${href}">
+      <img src="${image}" alt="" loading="lazy">
+      <div class="city-body">
+        <h3>${escapeHTML(title)}</h3>
+        <p>${homes.length} ${homes.length === 1 ? "home" : "homes"} · from ${formatPrice(from)}</p>
+      </div>
+      <span class="city-arrow" aria-hidden="true">→</span>
+    </a>`;
+}
+
+function renderCities(el, cities = CITIES) {
+  if (!el) return;
+  el.innerHTML = cities
+    .map((c) => tileHTML(c, LISTINGS.filter((l) => l.city === c), `listings.html?city=${encodeURIComponent(c)}`))
+    .join("");
+}
+
+function renderTypes(el) {
+  if (!el) return;
+  el.innerHTML = TYPES
+    .map((t) => [t, LISTINGS.filter((l) => l.type === t)])
+    .filter(([, homes]) => homes.length)
+    .map(([t, homes]) => tileHTML(`${t}s`, homes, `listings.html?type=${encodeURIComponent(t)}`, homes[homes.length - 1].image))
+    .join("");
+}
+
+// Numbers worked out from the listing data, so they stay accurate.
+function renderStats(el) {
+  if (!el) return;
+  const min = Math.min(...LISTINGS.map((l) => l.price));
+  el.innerHTML = [
+    [LISTINGS.length, "Homes available"],
+    [CITIES.length, "Cities covered"],
+    [TYPES.length, "Property types"],
+    [formatPrice(min).replace(",00", ""), "Homes from"],
+  ].map(([n, label]) => `<div><strong>${n}</strong><span>${label}</span></div>`).join("");
+}
+
+renderCities(document.getElementById("cities-preview"), CITIES.slice(-3));
+renderTypes(document.getElementById("types"));
+renderStats(document.getElementById("stats"));
+
 const year = document.getElementById("year");
 if (year) year.textContent = new Date().getFullYear();
